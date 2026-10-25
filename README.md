@@ -13,9 +13,9 @@ Runs on Android, iOS, and web.
 
 ## 📱 Install on Android
 
-**[⬇️ Download Android APK (Direct Link)](https://expo.dev/artifacts/eas/T8PHpOx4h76Rm7Pr19U2qa2njjJCqDWQOlomh8VfA6A.apk)**  
+**[⬇️ Download Android APK (Direct Link)](https://expo.dev/accounts/anirudhvenkat2010/projects/hazardhub-stl/builds/f58e7430-bb68-46fa-a05a-d60a461895b3)**  
 *(Or **[📱 Open Expo Build Page & Scan QR Code](https://expo.dev/accounts/anirudhvenkat2010/projects/hazardhub-stl/builds/d3dd5769-44bc-4aa6-9cf4-fe3e62d4ae98)**)*
-
+https://expo.dev/accounts/anirudhvenkat2010/projects/hazardhub-stl/builds/f58e7430-bb68-46fa-a05a-d60a461895b3
 1. On your Android phone, tap the download link above (or scan the QR code from the build page with your phone's camera).
 2. Open the downloaded `.apk` file. Android will warn that it's from an unknown
    source — tap **Settings → allow from this source** (or **Install anyway**), then

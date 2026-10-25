@@ -267,13 +267,9 @@ export default function ReportScreen() {
             <Text style={styles.muted}>No photo yet</Text>
           </View>
         )}
-        <View style={styles.rowButtons}>
-          <View style={{ flex: 1, minWidth: 130 }}>
-            <PrimaryButton label="Take photo" icon="camera" onPress={takePhoto} />
-          </View>
-          <View style={{ flex: 1, minWidth: 130 }}>
-            <PrimaryButton label="Choose photo" icon="images" tone="surface" onPress={pickPhoto} />
-          </View>
+        <View style={{ gap: spacing.sm, marginTop: spacing.sm }}>
+          <PrimaryButton label="Take photo" icon="camera" onPress={takePhoto} />
+          <PrimaryButton label="Choose photo" icon="images" tone="surface" onPress={pickPhoto} />
         </View>
         {photoMsg ? (
           <Text
@@ -529,28 +525,30 @@ const makeStyles = (colors: Palette) =>
     rowButtons: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap', alignItems: 'center' },
     sev: {
       flex: 1,
-      minWidth: 80,
-      paddingVertical: spacing.md,
+      minWidth: 84,
+      paddingVertical: spacing.md + 2,
       paddingHorizontal: spacing.sm,
-      borderRadius: radius.sm,
-      backgroundColor: colors.surfaceAlt,
-      borderWidth: 1,
-      borderColor: colors.border,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    sevActive: { backgroundColor: colors.accent, borderColor: colors.accent },
-    hazard: {
-      paddingVertical: spacing.sm + 2,
-      paddingHorizontal: spacing.md,
       borderRadius: radius.md,
       backgroundColor: colors.surfaceAlt,
       borderWidth: 1,
       borderColor: colors.border,
       alignItems: 'center',
       justifyContent: 'center',
+      minHeight: 48,
     },
-    sevText: { ...type.label, color: colors.text, textAlign: 'center' },
+    sevActive: { backgroundColor: colors.accent, borderColor: colors.accent },
+    hazard: {
+      paddingVertical: spacing.sm + 4,
+      paddingHorizontal: spacing.md + 2,
+      borderRadius: radius.md,
+      backgroundColor: colors.surfaceAlt,
+      borderWidth: 1,
+      borderColor: colors.border,
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: 44,
+    },
+    sevText: { ...type.label, fontSize: 15, color: colors.text, textAlign: 'center' },
     sevTextActive: { color: '#15202B', fontFamily: fonts.bold },
     hint: {
       flexDirection: 'row',

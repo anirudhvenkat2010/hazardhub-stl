@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import { radius, spacing, type, useTheme } from '@/ui/theme';
+import { fonts, radius, spacing, type, useTheme } from '@/ui/theme';
 
 type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -59,8 +59,8 @@ export function PrimaryButton({
         pressed && !disabled && { opacity: 0.85 },
       ]}
     >
-      {icon ? <Ionicons name={icon} size={19} color={fg} style={{ marginRight: 8 }} /> : null}
-      <Text style={[type.label, { color: fg, flexShrink: 1, textAlign: 'center' }]}>{label}</Text>
+      {icon ? <Ionicons name={icon} size={20} color={fg} style={{ marginRight: 8 }} /> : null}
+      <Text style={[type.label, styles.btnText, { color: fg }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -90,8 +90,8 @@ export function IconButton({
         pressed && { opacity: 0.7 },
       ]}
     >
-      <Ionicons name={icon} size={17} color={fg} style={{ marginRight: 6 }} />
-      <Text style={[type.caption, { color: fg }]}>{label}</Text>
+      <Ionicons name={icon} size={18} color={fg} style={{ marginRight: 6 }} />
+      <Text style={[type.caption, { color: fg, fontFamily: fonts.bold }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -101,20 +101,25 @@ const styles = StyleSheet.create({
   sectionRow: { flexDirection: 'row', alignItems: 'center', marginBottom: spacing.md },
   btn: {
     flexDirection: 'row',
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg,
+    width: '100%',
+    paddingVertical: spacing.md + 2,
+    paddingHorizontal: spacing.md,
     borderRadius: radius.md,
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 48,
+    minHeight: 52,
+  },
+  btnText: {
+    fontSize: 16,
+    textAlign: 'center',
   },
   iconBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.sm + 2,
     paddingHorizontal: spacing.md,
     borderRadius: radius.lg,
     borderWidth: 1,
-    minHeight: 36,
+    minHeight: 40,
   },
 });

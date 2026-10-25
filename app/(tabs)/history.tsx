@@ -295,10 +295,12 @@ const makeStyles = (colors: Palette) =>
     },
     filterTab: {
       flex: 1,
-      paddingVertical: spacing.sm,
-      borderRadius: radius.sm,
+      paddingVertical: spacing.sm + 2,
+      borderRadius: radius.md,
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: colors.surfaceAlt,
+      minHeight: 42,
     },
     filterTabActive: {
       backgroundColor: colors.accent,
@@ -384,9 +386,10 @@ const makeStyles = (colors: Palette) =>
       flexDirection: 'row',
       alignItems: 'center',
       backgroundColor: colors.accent,
-      paddingVertical: 7,
-      paddingHorizontal: 12,
-      borderRadius: radius.sm,
+      paddingVertical: 10,
+      paddingHorizontal: 16,
+      borderRadius: radius.md,
+      minHeight: 42,
     },
     advanceText: { ...type.caption, color: '#15202B', fontFamily: fonts.bold, fontSize: 12 },
     resolvedPill: {

@@ -509,8 +509,9 @@ const makeStyles = (colors: Palette) =>
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingVertical: spacing.sm,
-      borderRadius: radius.sm,
+      paddingVertical: spacing.sm + 2,
+      borderRadius: radius.md,
+      minHeight: 42,
     },
     modeTabActive: {
       backgroundColor: colors.accent,
