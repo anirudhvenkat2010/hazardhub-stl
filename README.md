@@ -13,7 +13,7 @@ Runs on Android, iOS, and web.
 
 ## 📱 Install on Android
 
-**[⬇️ Download Android APK (Direct Link)](https://expo.dev/artifacts/eas/L3UzG9e3mioqKs0kiwScEKWPWA0KS4EKlbJbZ6CrsPA.apk)**  
+**[⬇️ Download Android APK (Direct Link)](https://expo.dev/artifacts/eas/T8PHpOx4h76Rm7Pr19U2qa2njjJCqDWQOlomh8VfA6A.apk)**  
 *(Or **[📱 Open Expo Build Page & Scan QR Code](https://expo.dev/accounts/anirudhvenkat2010/projects/hazardhub-stl/builds/d3dd5769-44bc-4aa6-9cf4-fe3e62d4ae98)**)*
 
 1. On your Android phone, tap the download link above (or scan the QR code from the build page with your phone's camera).
