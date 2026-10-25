@@ -44,7 +44,7 @@ export function PrimaryButton({
 }) {
   const { colors } = useTheme();
   const bg = tone === 'accent' ? colors.accent : tone === 'danger' ? colors.danger : colors.surfaceAlt;
-  const fg = tone === 'surface' ? colors.text : '#15202B';
+  const fg = tone === 'surface' ? colors.text : tone === 'danger' ? '#FFFFFF' : '#15202B';
   return (
     <Pressable
       onPress={onPress}
@@ -60,7 +60,7 @@ export function PrimaryButton({
       ]}
     >
       {icon ? <Ionicons name={icon} size={19} color={fg} style={{ marginRight: 8 }} /> : null}
-      <Text numberOfLines={1} style={[type.label, { color: fg, flexShrink: 1, textAlign: 'center' }]}>{label}</Text>
+      <Text style={[type.label, { color: fg, flexShrink: 1, textAlign: 'center' }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -101,11 +101,12 @@ const styles = StyleSheet.create({
   sectionRow: { flexDirection: 'row', alignItems: 'center', marginBottom: spacing.md },
   btn: {
     flexDirection: 'row',
-    paddingVertical: spacing.md + 2,
+    paddingVertical: spacing.md,
     paddingHorizontal: spacing.lg,
     borderRadius: radius.md,
     alignItems: 'center',
     justifyContent: 'center',
+    minHeight: 48,
   },
   iconBtn: {
     flexDirection: 'row',
@@ -114,5 +115,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     borderRadius: radius.lg,
     borderWidth: 1,
+    minHeight: 36,
   },
 });

@@ -193,7 +193,7 @@ export default function MapScreen() {
             <Ionicons
               name="globe-outline"
               size={15}
-              color={mode === 'community' ? colors.bg : colors.text}
+              color={mode === 'community' ? '#15202B' : colors.text}
               style={{ marginRight: 6 }}
             />
             <Text style={[styles.modeText, mode === 'community' && styles.modeTextActive]}>
@@ -213,7 +213,7 @@ export default function MapScreen() {
             <Ionicons
               name="person-outline"
               size={15}
-              color={mode === 'personal' ? colors.bg : colors.text}
+              color={mode === 'personal' ? '#15202B' : colors.text}
               style={{ marginRight: 6 }}
             />
             <Text style={[styles.modeText, mode === 'personal' && styles.modeTextActive]}>
@@ -294,7 +294,7 @@ export default function MapScreen() {
               showRouteAlert && { backgroundColor: colors.accent, borderColor: colors.accent },
             ]}
           >
-            <Text style={[styles.chipText, showRouteAlert && { color: colors.bg }]}>
+            <Text style={[styles.chipText, showRouteAlert && { color: '#15202B' }]}>
               🚗 Route Alert
             </Text>
           </Pressable>
@@ -333,7 +333,7 @@ export default function MapScreen() {
                 <Text
                   style={[
                     styles.routeTabText,
-                    selectedRouteId === r.id && { color: colors.bg, fontFamily: fonts.bold },
+                    selectedRouteId === r.id && { color: '#15202B', fontFamily: fonts.bold },
                   ]}
                 >
                   {r.routeName}
@@ -384,7 +384,7 @@ export default function MapScreen() {
             <View style={{ flex: 1, marginRight: spacing.sm }}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
                 <Text style={{ fontSize: 18 }}>{selectedPin.emoji}</Text>
-                <Text numberOfLines={1} style={styles.detailTitle}>
+                <Text numberOfLines={2} style={styles.detailTitle}>
                   {selectedPin.title}
                 </Text>
               </View>
@@ -462,7 +462,7 @@ export default function MapScreen() {
               }}
               style={styles.navBtn}
             >
-              <Ionicons name="navigate" size={14} color={colors.bg} style={{ marginRight: 4 }} />
+              <Ionicons name="navigate" size={14} color="#15202B" style={{ marginRight: 4 }} />
               <Text style={styles.navBtnText}>Directions</Text>
             </Pressable>
           </View>
@@ -516,7 +516,7 @@ const makeStyles = (colors: Palette) =>
       backgroundColor: colors.accent,
     },
     modeText: { ...type.label, fontSize: 13, color: colors.text },
-    modeTextActive: { color: colors.bg },
+    modeTextActive: { color: '#15202B', fontFamily: fonts.bold },
     filterScroll: {
       gap: spacing.xs + 2,
       paddingVertical: 2,
@@ -539,7 +539,7 @@ const makeStyles = (colors: Palette) =>
       borderColor: colors.accent,
     },
     chipText: { ...type.caption, fontSize: 12, color: colors.text, fontFamily: fonts.bold },
-    chipTextActive: { color: colors.bg },
+    chipTextActive: { color: '#15202B' },
     countBadge: {
       position: 'absolute',
       alignSelf: 'center',
@@ -593,6 +593,8 @@ const makeStyles = (colors: Palette) =>
       paddingTop: spacing.sm,
       borderTopWidth: 1,
       borderTopColor: colors.border,
+      flexWrap: 'wrap',
+      gap: spacing.xs,
     },
     metaText: { ...type.caption, fontSize: 11, color: colors.textMuted },
     navBtn: {
@@ -603,7 +605,7 @@ const makeStyles = (colors: Palette) =>
       paddingHorizontal: 12,
       borderRadius: radius.sm,
     },
-    navBtnText: { ...type.caption, color: colors.bg, fontFamily: fonts.bold, fontSize: 12 },
+    navBtnText: { ...type.caption, color: '#15202B', fontFamily: fonts.bold, fontSize: 12 },
     routeAlertCard: {
       position: 'absolute',
       left: spacing.md,

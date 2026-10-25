@@ -225,10 +225,7 @@ export default function ReportScreen() {
                 accessibilityLabel={`Hazard type ${meta.label}`}
                 style={[styles.hazard, active && styles.sevActive]}
               >
-                <Text
-                  numberOfLines={1}
-                  style={[styles.sevText, active && styles.sevTextActive]}
-                >
+                <Text style={[styles.sevText, active && styles.sevTextActive]}>
                   {meta.emoji} {meta.label}
                 </Text>
               </Pressable>
@@ -271,11 +268,11 @@ export default function ReportScreen() {
           </View>
         )}
         <View style={styles.rowButtons}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, minWidth: 130 }}>
             <PrimaryButton label="Take photo" icon="camera" onPress={takePhoto} />
           </View>
-          <View style={{ flex: 1 }}>
-            <PrimaryButton label="Choose" icon="images" tone="surface" onPress={pickPhoto} />
+          <View style={{ flex: 1, minWidth: 130 }}>
+            <PrimaryButton label="Choose photo" icon="images" tone="surface" onPress={pickPhoto} />
           </View>
         </View>
         {photoMsg ? (
@@ -361,7 +358,7 @@ export default function ReportScreen() {
                         </View>
                       ) : (
                         <View style={styles.aiUseBtn}>
-                          <Text style={[type.caption, { color: colors.bg, fontFamily: fonts.bold, fontSize: 12 }]}>Use</Text>
+                          <Text style={[type.caption, { color: '#15202B', fontFamily: fonts.bold, fontSize: 12 }]}>Use</Text>
                         </View>
                       )}
                     </View>
@@ -427,7 +424,7 @@ export default function ReportScreen() {
               accessibilityLabel={`Severity ${s.label}`}
               style={[styles.sev, severity === s.value && styles.sevActive]}
             >
-              <Text numberOfLines={1} style={[styles.sevText, severity === s.value && styles.sevTextActive]}>{s.label}</Text>
+              <Text style={[styles.sevText, severity === s.value && styles.sevTextActive]}>{s.label}</Text>
             </Pressable>
           ))}
         </View>
@@ -464,7 +461,7 @@ export default function ReportScreen() {
               accessibilityState={{ selected: routedAgency === a }}
               style={[styles.sev, routedAgency === a && styles.sevActive]}
             >
-              <Text numberOfLines={1} style={[styles.sevText, routedAgency === a && styles.sevTextActive]}>
+              <Text style={[styles.sevText, routedAgency === a && styles.sevTextActive]}>
                 {a === 'modot' ? 'MoDOT' : a === 'stlouis_city' ? 'City' : 'County'}
               </Text>
             </Pressable>
@@ -529,12 +526,12 @@ const makeStyles = (colors: Palette) =>
       justifyContent: 'center',
       marginBottom: spacing.md,
     },
-    rowButtons: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap' },
+    rowButtons: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm, flexWrap: 'wrap', alignItems: 'center' },
     sev: {
-      flexGrow: 1,
-      minWidth: 88,
+      flex: 1,
+      minWidth: 80,
       paddingVertical: spacing.md,
-      paddingHorizontal: spacing.md,
+      paddingHorizontal: spacing.sm,
       borderRadius: radius.sm,
       backgroundColor: colors.surfaceAlt,
       borderWidth: 1,
@@ -544,16 +541,17 @@ const makeStyles = (colors: Palette) =>
     },
     sevActive: { backgroundColor: colors.accent, borderColor: colors.accent },
     hazard: {
-      paddingVertical: spacing.sm,
+      paddingVertical: spacing.sm + 2,
       paddingHorizontal: spacing.md,
-      borderRadius: radius.sm,
+      borderRadius: radius.md,
       backgroundColor: colors.surfaceAlt,
       borderWidth: 1,
       borderColor: colors.border,
       alignItems: 'center',
+      justifyContent: 'center',
     },
     sevText: { ...type.label, color: colors.text, textAlign: 'center' },
-    sevTextActive: { color: colors.bg },
+    sevTextActive: { color: '#15202B', fontFamily: fonts.bold },
     hint: {
       flexDirection: 'row',
       alignItems: 'flex-start',

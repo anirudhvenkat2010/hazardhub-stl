@@ -169,7 +169,7 @@ function ReportCard({
         <View style={{ flex: 1, marginRight: spacing.sm }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 2 }}>
             <Text style={{ fontSize: 18 }}>{hazard.emoji}</Text>
-            <Text numberOfLines={1} style={styles.title}>
+            <Text numberOfLines={2} style={styles.title}>
               {report.address ?? report.note ?? hazard.reportNoun}
             </Text>
           </View>
@@ -229,11 +229,10 @@ function ReportCard({
                   <Ionicons
                     name={isCompleted ? (step.icon as any) : 'ellipse-outline'}
                     size={12}
-                    color={isCurrent ? colors.bg : isCompleted ? step.color : colors.textMuted}
+                    color={isCurrent ? '#15202B' : isCompleted ? step.color : colors.textMuted}
                   />
                 </View>
                 <Text
-                  numberOfLines={1}
                   style={[
                     styles.stepText,
                     isCurrent && { color: step.color, fontFamily: fonts.bold },
@@ -261,7 +260,7 @@ function ReportCard({
             accessibilityLabel={`Advance status to ${REPORT_STATUS_STEPS[currentStepIdx + 1]?.label ?? 'Next'}`}
             style={styles.advanceBtn}
           >
-            <Ionicons name="arrow-forward-circle" size={16} color={colors.bg} style={{ marginRight: 6 }} />
+            <Ionicons name="arrow-forward-circle" size={16} color="#15202B" style={{ marginRight: 6 }} />
             <Text style={styles.advanceText}>
               Advance ➔ {REPORT_STATUS_STEPS[currentStepIdx + 1]?.label ?? 'Next Step'}
             </Text>
@@ -273,7 +272,7 @@ function ReportCard({
           </View>
         )}
 
-        <View style={{ flexDirection: 'row', gap: spacing.sm, marginLeft: 'auto' }}>
+        <View style={styles.actionButtons}>
           {maps ? <IconButton icon="map" label="Map" onPress={() => Linking.openURL(maps)} /> : null}
           {target.phone ? <IconButton icon="call" label="Call" onPress={() => Linking.openURL(`tel:${target.phone}`)} /> : null}
           <IconButton icon="trash" label="Delete" tone="danger" onPress={onDelete} />
@@ -305,7 +304,7 @@ const makeStyles = (colors: Palette) =>
       backgroundColor: colors.accent,
     },
     filterText: { ...type.caption, fontFamily: fonts.bold, color: colors.textMuted },
-    filterTextActive: { color: colors.bg },
+    filterTextActive: { color: '#15202B', fontFamily: fonts.bold },
     empty: {
       flex: 1,
       alignItems: 'center',
@@ -371,9 +370,15 @@ const makeStyles = (colors: Palette) =>
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
-      marginTop: 2,
+      marginTop: spacing.xs,
       flexWrap: 'wrap',
       gap: spacing.sm,
+    },
+    actionButtons: {
+      flexDirection: 'row',
+      gap: spacing.sm,
+      flexWrap: 'wrap',
+      alignItems: 'center',
     },
     advanceBtn: {
       flexDirection: 'row',
@@ -383,7 +388,7 @@ const makeStyles = (colors: Palette) =>
       paddingHorizontal: 12,
       borderRadius: radius.sm,
     },
-    advanceText: { ...type.caption, color: colors.bg, fontFamily: fonts.bold, fontSize: 12 },
+    advanceText: { ...type.caption, color: '#15202B', fontFamily: fonts.bold, fontSize: 12 },
     resolvedPill: {
       flexDirection: 'row',
       alignItems: 'center',

@@ -2,9 +2,13 @@
 # build-apk.sh — build an installable Android APK for HazardHub STL via EAS.
 set -euo pipefail
 
-PROJECT_DIR="/Users/tvxr2/projects/hazardhub-stl"
-NODE20_BIN="/opt/homebrew/opt/node@20/bin"
-[ -x "$NODE20_BIN/node" ] && export PATH="$NODE20_BIN:$PATH"
+PROJECT_DIR="C:\projects\hazardhub-stl"
+NODE20_BIN="$PROJECT_DIR/node_modules/node/bin"
+if [ -d "$NODE20_BIN" ]; then
+  command -v cygpath >/dev/null 2>&1 && export PATH="$(cygpath -u "$NODE20_BIN"):$PATH" || export PATH="$NODE20_BIN:$PATH"
+elif [ -x "/opt/homebrew/opt/node@20/bin/node" ]; then
+  export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+fi
 echo "Using Node $(node -v)"
 cd "$PROJECT_DIR"
 
@@ -20,7 +24,6 @@ else
   echo "Logging in to Expo (free account at https://expo.dev)..."; $EAS login
 fi
 
-$EAS init
 echo "Submitting Android APK build (preview profile)..."
 $EAS build --platform android --profile preview
 

@@ -134,7 +134,7 @@ export default function MapScreenWeb() {
             <Ionicons
               name="globe-outline"
               size={15}
-              color={mode === 'community' ? colors.bg : colors.text}
+              color={mode === 'community' ? '#15202B' : colors.text}
               style={{ marginRight: 6 }}
             />
             <Text style={[styles.modeText, mode === 'community' && styles.modeTextActive]}>
@@ -151,7 +151,7 @@ export default function MapScreenWeb() {
             <Ionicons
               name="person-outline"
               size={15}
-              color={mode === 'personal' ? colors.bg : colors.text}
+              color={mode === 'personal' ? '#15202B' : colors.text}
               style={{ marginRight: 6 }}
             />
             <Text style={[styles.modeText, mode === 'personal' && styles.modeTextActive]}>
@@ -214,7 +214,7 @@ export default function MapScreenWeb() {
               showRouteAlert && { backgroundColor: colors.accent, borderColor: colors.accent },
             ]}
           >
-            <Text style={[styles.chipText, showRouteAlert && { color: colors.bg }]}>🚗 Route Alert</Text>
+            <Text style={[styles.chipText, showRouteAlert && { color: '#15202B' }]}>🚗 Route Alert</Text>
           </Pressable>
         </ScrollView>
       </View>
@@ -255,7 +255,7 @@ export default function MapScreenWeb() {
                   <Text
                     style={[
                       styles.routeTabText,
-                      selectedRouteId === r.id && { color: colors.bg, fontFamily: fonts.bold },
+                      selectedRouteId === r.id && { color: '#15202B', fontFamily: fonts.bold },
                     ]}
                   >
                     {r.routeName}
@@ -435,7 +435,7 @@ const makeStyles = (colors: Palette) =>
       backgroundColor: colors.accent,
     },
     modeText: { ...type.label, fontSize: 13, color: colors.text },
-    modeTextActive: { color: colors.bg },
+    modeTextActive: { color: '#15202B', fontFamily: fonts.bold },
     filterScroll: {
       gap: spacing.xs + 2,
       paddingVertical: 2,
@@ -453,7 +453,7 @@ const makeStyles = (colors: Palette) =>
       borderColor: colors.accent,
     },
     chipText: { ...type.caption, fontSize: 12, color: colors.text, fontFamily: fonts.bold },
-    chipTextActive: { color: colors.bg },
+    chipTextActive: { color: '#15202B' },
     sectionHeading: { ...type.heading, fontSize: 15, color: colors.text },
     legendText: { ...type.caption, fontSize: 11, color: colors.textMuted },
     hotspotsSection: {

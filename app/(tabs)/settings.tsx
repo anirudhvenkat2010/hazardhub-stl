@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { useStore } from '@/store/AppStore';
 import { Card, SectionTitle } from '@/ui/components';
-import { radius, spacing, type, useTheme, type Palette } from '@/ui/theme';
+import { fonts, radius, spacing, type, useTheme, type Palette } from '@/ui/theme';
 
 export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
@@ -41,7 +41,7 @@ export default function SettingsScreen() {
                 <Ionicons
                   name={icon}
                   size={16}
-                  color={active ? colors.bg : colors.text}
+                  color={active ? '#15202B' : colors.text}
                   style={{ marginRight: 6 }}
                 />
                 <Text style={[styles.selText, active && styles.selTextActive]}>{label}</Text>
@@ -130,7 +130,7 @@ const makeStyles = (colors: Palette) =>
     },
     selActive: { backgroundColor: colors.accent, borderColor: colors.accent },
     selText: { ...type.label, color: colors.text },
-    selTextActive: { color: colors.bg },
+    selTextActive: { color: '#15202B', fontFamily: fonts.bold },
     body: { ...type.body, fontSize: 15, color: colors.text, lineHeight: 22 },
     muted: { ...type.caption, color: colors.textMuted, lineHeight: 18 },
     linkRow: { flexDirection: 'row', alignItems: 'center', marginTop: spacing.md },
